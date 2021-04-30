@@ -17,15 +17,11 @@ class ViewController: UIViewController {
     
     var number: Int = 128 {
         didSet {
-            
             if number < 0 {
-                number = 0
-            } else if number > 255 {
                 number = 255
+            } else if number > 255 {
+                number = 0
             }
-            
-//            number = number < 0 ? 0 : number
-//            number = number > 255 ? 255 : number
             updateUI()
         }
     }
@@ -54,11 +50,7 @@ class ViewController: UIViewController {
     
     // MARK: - Button
     @IBAction func pressCounterButton(_ sender: UIButton) {
-//        if number == 255 {
-//            number = 0
-//        } else  {
-//            number += 1
-//        }
+        number += 1
     }
     
     
