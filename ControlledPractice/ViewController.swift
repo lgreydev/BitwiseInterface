@@ -15,11 +15,22 @@ class ViewController: UIViewController {
     @IBOutlet weak var mySlider: UISlider!
     @IBOutlet weak var myTextField: UITextField!
     
-    var number: UInt8 = 128 {
+    var number: Int = 128 {
         didSet {
+            
+            if number < 0 {
+                number = 0
+            } else if number > 255 {
+                number = 255
+            }
+            
+//            number = number < 0 ? 0 : number
+//            number = number > 255 ? 255 : number
             updateUI()
         }
     }
+    
+    
     
     // MARK: - View Did Load
     override func viewDidLoad() {
@@ -43,11 +54,11 @@ class ViewController: UIViewController {
     
     // MARK: - Button
     @IBAction func pressCounterButton(_ sender: UIButton) {
-        if number == 255 {
-            number = 0
-        } else  {
-            number += 1
-        }
+//        if number == 255 {
+//            number = 0
+//        } else  {
+//            number += 1
+//        }
     }
     
     
@@ -65,9 +76,9 @@ class ViewController: UIViewController {
     
     func updateNumberFromSwitch(in curentSwich: UISwitch) {
         if !curentSwich.isOn {
-            number = number - UInt8(curentSwich.tag)
+            number = number - curentSwich.tag
         } else {
-            number = number + UInt8(curentSwich.tag)
+            number = number + curentSwich.tag
         }
     }
     
@@ -78,19 +89,29 @@ class ViewController: UIViewController {
     }
     
     
+    
     // MARK: - Slider
     @IBAction func moveSlider(_ sender: UISlider) {
-        number = UInt8(sender.value)
+        number = Int(sender.value)
     }
     
     
     
     // MARK: - Field Action
-    
     @IBAction func editorTextField(_ sender: UITextField) {
         
     }
     
     
+    
+    // MARK: - Gesture
+    @IBAction func screenTapping(_ sender: UITapGestureRecognizer) {
+        let location = sender.location(in: view)
+        if location.x < view.bounds.midX {
+              number -= 1
+        } else {
+              number += 1
+        }
+    }
 }
 
