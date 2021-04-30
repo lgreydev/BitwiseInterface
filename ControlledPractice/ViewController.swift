@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var mySlider: UISlider!
     @IBOutlet weak var myTextField: UITextField!
     
-    var number: UInt8 = 255 {
+    var number: UInt8 = 128 {
         didSet {
             updateUI()
         }
@@ -54,7 +54,7 @@ class ViewController: UIViewController {
     
     // MARK: - Switch
     @IBAction func pressSwitch(_ sender: UISwitch) {
-       updateNumberFromSwitch(sender)
+        updateNumberFromSwitch(in: sender)
     }
     
     func rotateSwitches() {
@@ -63,15 +63,18 @@ class ViewController: UIViewController {
         }
     }
     
-    func updateNumberFromSwitch(_ inputSwitch: UISwitch) {
-        if !inputSwitch.isOn {
-            number = number - UInt8(inputSwitch.tag)
+    func updateNumberFromSwitch(in curentSwich: UISwitch) {
+        if !curentSwich.isOn {
+            number = number - UInt8(curentSwich.tag)
         } else {
-            number = number + UInt8(inputSwitch.tag)
+            number = number + UInt8(curentSwich.tag)
         }
     }
     
     func updateSwitchFromNumber() {
+        for curentSwich in switches {
+            curentSwich.isOn = Int(number) & curentSwich.tag != 0
+        }
     }
     
     
