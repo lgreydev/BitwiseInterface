@@ -13,7 +13,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var counterButton: UIButton!
     @IBOutlet var switches: [UISwitch]!
     @IBOutlet weak var mySlider: UISlider!
-    @IBOutlet weak var myTextField: UITextField!
     
     var number: Int = 128 {
         didSet {
@@ -41,7 +40,6 @@ class ViewController: UIViewController {
         counterButton.setTitle("\(number)", for: .normal)
         updateSwitchFromNumber()
         mySlider.value = Float(number)
-        myTextField.text = String(number)
     }
     
     
@@ -56,6 +54,7 @@ class ViewController: UIViewController {
         updateNumberFromSwitch(in: sender)
     }
     
+    /// Rotate the switches 90 degrees
     func rotateSwitches() {
         for value in switches {
             value.layer.transform = CATransform3DRotate(value.layer.transform, -.pi / 2, 0, 0, 1)
@@ -80,12 +79,6 @@ class ViewController: UIViewController {
     // MARK: - Slider
     @IBAction func moveSlider(_ sender: UISlider) {
         number = Int(sender.value)
-    }
-    
-    
-    // MARK: - Field Action
-    @IBAction func editorTextField(_ sender: UITextField) {
-        
     }
     
     
