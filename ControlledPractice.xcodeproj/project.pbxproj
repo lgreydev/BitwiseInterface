@@ -11,6 +11,7 @@
 		5E41F10D263C47CA005299DA /* simulator_003.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E41F10A263C47CA005299DA /* simulator_003.png */; };
 		5E41F10E263C47CA005299DA /* simulator_001.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E41F10B263C47CA005299DA /* simulator_001.png */; };
 		5E41F110263C481D005299DA /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5E41F10F263C481D005299DA /* README.md */; };
+		5E41F112263C4DE5005299DA /* simulator_004.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E41F111263C4DE5005299DA /* simulator_004.png */; };
 		5EF4D55B2639EF7800D2605B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF4D55A2639EF7800D2605B /* AppDelegate.swift */; };
 		5EF4D55D2639EF7800D2605B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF4D55C2639EF7800D2605B /* SceneDelegate.swift */; };
 		5EF4D55F2639EF7800D2605B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF4D55E2639EF7800D2605B /* ViewController.swift */; };
@@ -24,6 +25,7 @@
 		5E41F10A263C47CA005299DA /* simulator_003.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simulator_003.png; sourceTree = "<group>"; };
 		5E41F10B263C47CA005299DA /* simulator_001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simulator_001.png; sourceTree = "<group>"; };
 		5E41F10F263C481D005299DA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		5E41F111263C4DE5005299DA /* simulator_004.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simulator_004.png; sourceTree = "<group>"; };
 		5EF4D5572639EF7800D2605B /* ControlledPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ControlledPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EF4D55A2639EF7800D2605B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5EF4D55C2639EF7800D2605B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +53,7 @@
 				5E41F10B263C47CA005299DA /* simulator_001.png */,
 				5E41F109263C47CA005299DA /* simulator_002.png */,
 				5E41F10A263C47CA005299DA /* simulator_003.png */,
+				5E41F111263C4DE5005299DA /* simulator_004.png */,
 			);
 			path = Screenshot;
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 				5E41F10D263C47CA005299DA /* simulator_003.png in Resources */,
 				5E41F10E263C47CA005299DA /* simulator_001.png in Resources */,
 				5EF4D5622639EF7800D2605B /* Main.storyboard in Resources */,
+				5E41F112263C4DE5005299DA /* simulator_004.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
