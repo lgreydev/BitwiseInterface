@@ -27,14 +27,12 @@ class ViewController: UIViewController {
     }
     
     
-    
     // MARK: - View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
         rotateSwitches()
     }
-    
     
     
     // MARK: - Update UI
@@ -47,12 +45,10 @@ class ViewController: UIViewController {
     }
     
     
-    
-    // MARK: - Button
+    // MARK: - Counter
     @IBAction func pressCounterButton(_ sender: UIButton) {
         number += 1
     }
-    
     
     
     // MARK: - Switch
@@ -81,19 +77,16 @@ class ViewController: UIViewController {
     }
     
     
-    
     // MARK: - Slider
     @IBAction func moveSlider(_ sender: UISlider) {
         number = Int(sender.value)
     }
     
     
-    
     // MARK: - Field Action
     @IBAction func editorTextField(_ sender: UITextField) {
         
     }
-    
     
     
     // MARK: - Gesture
