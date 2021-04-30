@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var mySlider: UISlider!
     @IBOutlet weak var myTextField: UITextField!
     
-    var number: UInt8 = 128 {
+    var number: UInt8 = 255 {
         didSet {
             updateUI()
         }
@@ -25,6 +25,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
+        rotateSwitches()
     }
     
     
@@ -33,16 +34,14 @@ class ViewController: UIViewController {
     /// Update all outlet
     func updateUI() {
         counterButton.setTitle("\(number)", for: .normal)
-        
-        // TODO: set switchers to number
-        
+        updateSwitchFromNumber()
         mySlider.value = Float(number)
         myTextField.text = String(number)
     }
     
     
     
-    // MARK: - Button Action
+    // MARK: - Button
     @IBAction func pressCounterButton(_ sender: UIButton) {
         if number == 255 {
             number = 0
@@ -53,19 +52,37 @@ class ViewController: UIViewController {
     
     
     
-    // MARK: - Switch Action
+    // MARK: - Switch
     @IBAction func pressSwitch(_ sender: UISwitch) {
+       updateNumberFromSwitch(sender)
+    }
+    
+    func rotateSwitches() {
+        for value in switches {
+            value.layer.transform = CATransform3DRotate(value.layer.transform, -.pi / 2, 0, 0, 1)
+        }
+    }
+    
+    func updateNumberFromSwitch(_ inputSwitch: UISwitch) {
+        if !inputSwitch.isOn {
+            number = number - UInt8(inputSwitch.tag)
+        } else {
+            number = number + UInt8(inputSwitch.tag)
+        }
+    }
+    
+    func updateSwitchFromNumber() {
     }
     
     
-    // MARK: - Slider Action
+    // MARK: - Slider
     @IBAction func moveSlider(_ sender: UISlider) {
         number = UInt8(sender.value)
     }
     
     
     
-    // MARK: - Text Field Action
+    // MARK: - Field Action
     
     @IBAction func editorTextField(_ sender: UITextField) {
         
