@@ -8,24 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
-    // MARK: - Property
-    @IBOutlet weak var counterButton: UIButton!
-    @IBOutlet var switches: [UISwitch]!
-    @IBOutlet weak var mySlider: UISlider!
-    
-    var number: Int = 128 {
-        didSet {
-            if number < 0 {
-                number = 255
-            } else if number > 255 {
-                number = 0
-            }
-            updateUI()
-        }
-    }
-    
-    
+        
     // MARK: - View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,12 +27,27 @@ class ViewController: UIViewController {
     
     
     // MARK: - Counter
+    @IBOutlet weak var counterButton: UIButton!
+    
+    var number: Int = 128 {
+        didSet {
+            if number < 0 {
+                number = 255
+            } else if number > 255 {
+                number = 0
+            }
+            updateUI()
+        }
+    }
+    
     @IBAction func pressCounterButton(_ sender: UIButton) {
         number += 1
     }
     
     
     // MARK: - Switch
+    @IBOutlet var switches: [UISwitch]!
+    
     @IBAction func pressSwitch(_ sender: UISwitch) {
         updateNumberFromSwitch(in: sender)
     }
@@ -77,6 +75,8 @@ class ViewController: UIViewController {
     
     
     // MARK: - Slider
+    @IBOutlet weak var mySlider: UISlider!
+    
     @IBAction func moveSlider(_ sender: UISlider) {
         number = Int(sender.value)
     }
